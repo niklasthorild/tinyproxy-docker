@@ -29,3 +29,11 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/${{ github.repository_owner }}/tinyproxy-docker:latest
+      -
+        name: Cleanup old versions
+        uses: actions/delete-package-versions@v5
+        with: 
+          package-name: 'tinyproxy-docker'
+          package-type: 'container'
+          min-versions-to-keep: 5
+          delete-only-untagged-versions: 'true'
