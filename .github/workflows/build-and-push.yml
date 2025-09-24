@@ -37,3 +37,4 @@ jobs:
           package-type: 'container'
           min-versions-to-keep: 5
           delete-only-untagged-versions: 'true'
+          token: ${{ secrets.GH_GHCR }}
